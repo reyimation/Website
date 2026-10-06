@@ -234,6 +234,10 @@ body.light .badge-dot{background:var(--y);opacity:1}
 .pf-tags{display:flex;gap:.5rem;flex-wrap:wrap}
 .pf-tags span{font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid var(--mid);color:var(--dim);}
 
+
+/* auto-rendered project media */
+.pj-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.proj-duo-one{grid-template-columns:1fr}
 /* DUO cards */
 .proj-duo{display:grid;grid-template-columns:1fr 1fr;gap:3px;border-bottom:3px solid var(--mid);}
 .proj-duo-card{background:var(--grey);cursor:none;}
@@ -822,6 +826,8 @@ body.light .toggle-moon{display:block}
     <a href="allwork.html" class="all-work-link">All Work →</a>
   </div>
 
+  <!-- Neeche ke demo cards tab tak dikhte hain jab tak projects/ me koi project nahi hota -->
+  <div id="projHome">
   <!-- PROJECT 01 — full width featured -->
   <div class="proj-featured reveal">
     <div class="pf-visual" style="background:linear-gradient(135deg,#0d1f3c,#0a0f2e)">
@@ -884,6 +890,7 @@ body.light .toggle-moon{display:block}
         <p class="pdc-tool">Blender · Cycles</p>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- VIEW ALL CTA -->
@@ -1048,6 +1055,8 @@ body.light .toggle-moon{display:block}
   <p class="foot-r"></p>
 </footer>
 
+<script src="data/projects-data.js"></script>
+<script src="assets/js/projects.js"></script>
 <script>
 /* CURSOR */
 const cur = document.getElementById('cur');

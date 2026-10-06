@@ -169,7 +169,7 @@ body.light .badge-dot{background:var(--y);opacity:1}
 .card-emoji{font-size:3.5rem;opacity:.1;transition:opacity .3s,transform .4s}
 .proj-card:hover .card-emoji{opacity:.22;transform:scale(1.1) rotate(-5deg)}
 
-.card-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.pj-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 
 /* Play overlay */
 .card-overlay{
@@ -341,7 +341,7 @@ footer{
 <div class="projects-wrap">
   <div class="projects-grid" id="grid">
 
-    <div class="proj-card" data-cat="Brand Film">
+    <div class="proj-card" data-placeholder data-cat="Brand Film">
       <div class="proj-card-inner">
         <div class="card-emoji">🎬</div>
         <div class="card-overlay">
@@ -361,7 +361,7 @@ footer{
       </div>
     </div>
 
-    <div class="proj-card" data-cat="Motion Graphics">
+    <div class="proj-card" data-placeholder data-cat="Motion Graphics">
       <div class="proj-card-inner">
         <div class="card-emoji">⚡</div>
         <div class="card-overlay">
@@ -381,26 +381,7 @@ footer{
       </div>
     </div>
 
-    <div class="proj-card" data-cat="Video Editing">
-      <div class="proj-card-inner">
-        <video class="card-video" src="Real_State.mp4#t=0.5" muted loop playsinline preload="metadata"></video>
-        <div class="card-overlay">
-          <div class="play-ring">
-            <svg width="12" height="14" viewBox="0 0 12 14" fill="rgba(212,255,0,.9)"><path d="M0 0L12 7L0 14V0Z"/></svg>
-          </div>
-        </div>
-        <div class="card-badge">Video Editing</div>
-      </div>
-      <div class="card-info">
-        <p class="card-cat">Video Editing</p>
-        <h3 class="card-name">The Modern Residence</h3>
-        <div class="card-meta">
-          <span class="card-tools">Cinematic Property Showcase</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="proj-card" data-cat="Music Video">
+    <div class="proj-card" data-placeholder data-cat="Music Video">
       <div class="proj-card-inner">
         <div class="card-emoji">🎵</div>
         <div class="card-overlay">
@@ -420,7 +401,7 @@ footer{
       </div>
     </div>
 
-    <div class="proj-card" data-cat="Color Grading">
+    <div class="proj-card" data-placeholder data-cat="Color Grading">
       <div class="proj-card-inner">
         <div class="card-emoji">🎨</div>
         <div class="card-overlay">
@@ -440,7 +421,7 @@ footer{
       </div>
     </div>
 
-    <div class="proj-card" data-cat="Motion Graphics">
+    <div class="proj-card" data-placeholder data-cat="Motion Graphics">
       <div class="proj-card-inner">
         <div class="card-emoji">🔮</div>
         <div class="card-overlay">
@@ -460,7 +441,7 @@ footer{
       </div>
     </div>
 
-    <div class="proj-card" data-cat="Video Editing">
+    <div class="proj-card" data-placeholder data-cat="Video Editing">
       <div class="proj-card-inner">
         <div class="card-emoji">🎞️</div>
         <div class="card-overlay">
@@ -480,7 +461,7 @@ footer{
       </div>
     </div>
 
-    <div class="proj-card" data-cat="3D Animation">
+    <div class="proj-card" data-placeholder data-cat="3D Animation">
       <div class="proj-card-inner">
         <div class="card-emoji">✨</div>
         <div class="card-overlay">
@@ -512,6 +493,8 @@ footer{
   <p class="foot-r"></p>
 </footer>
 
+<script src="data/projects-data.js"></script>
+<script src="assets/js/projects.js"></script>
 <script>
 /* THEME TOGGLE */
 function toggleTheme(){
@@ -574,20 +557,6 @@ btns.forEach(btn => {
 
     countEl.textContent = count;
     empty.classList.toggle('show', count === 0);
-  });
-});
-
-/* VIDEO CARD: hover = muted preview, click = fullscreen with sound */
-document.querySelectorAll('.card-video').forEach(v => {
-  const card = v.closest('.proj-card');
-  card.addEventListener('mouseenter', () => { v.play().catch(()=>{}); });
-  card.addEventListener('mouseleave', () => { if(!document.fullscreenElement){ v.pause(); v.currentTime = 0.5; } });
-  card.addEventListener('click', () => {
-    v.muted = false; v.controls = true; v.play().catch(()=>{});
-    if (v.requestFullscreen) v.requestFullscreen();
-  });
-  document.addEventListener('fullscreenchange', () => {
-    if(!document.fullscreenElement){ v.controls = false; v.muted = true; v.pause(); v.currentTime = 0.5; }
   });
 });
 </script>

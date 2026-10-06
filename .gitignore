@@ -1,0 +1,13 @@
+# Never push original/heavy videos (GitHub blocks files over 100 MB)
+projects/**/*.mp4
+projects/**/*.mov
+projects/**/*.mkv
+projects/**/*.m4v
+projects/**/*.avi
+projects/**/*.webm
+# ...but DO push the compressed web versions
+!projects/**/*-web.mp4
+
+# OS junk
+Thumbs.db
+.DS_Store
