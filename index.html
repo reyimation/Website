@@ -1199,7 +1199,8 @@ function closeModal(){
 document.getElementById('modal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-document.getElementById('sendBtn').addEventListener('click',function(){
+var _sb=document.getElementById('sendBtn');
+if(_sb)_sb.addEventListener('click',function(){
   this.textContent='Sent ✓ talk soon';
   this.style.background='#fff';
   this.style.color='#000';
