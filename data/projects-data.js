@@ -1,0 +1,1 @@
+window.PROJECTS = [{"slug":"the-modern-residence","title":"The Modern Residence","category":"Video Editing","subtitle":"Cinematic Property Showcase","description":"","tags":[],"year":"","featured":true,"order":1,"link":"","video":"Real_State_web.mp4","thumb":""}];
